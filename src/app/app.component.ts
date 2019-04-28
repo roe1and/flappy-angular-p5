@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   pipeSpeed = 2;
 
   constructor() {
+    //
   }
 
   ngOnInit() {
@@ -24,21 +25,22 @@ export class AppComponent implements OnInit {
 
   private createCanvas = () => {
     this.p5 = new p5(this.drawing);
-  }
+  };
 
   private drawing = function(p: any) {
-    const bird = new Bird();
-    const pipe = new Pipe();
     const width = 800;
     const height = 600;
+    const bird = new Bird(width, height);
+    const pipe = new Pipe(width, height);
+
     p.setup = () => {
       p.createCanvas(800, 600);
-      p.background(51);
+      p.background(255, 255, 255);
     };
 
     p.draw = () => {
-      bird.show(p, width, height);
-      pipe.show(p, width, height);
+      bird.show(p);
+      pipe.show(p);
     };
   };
 }
