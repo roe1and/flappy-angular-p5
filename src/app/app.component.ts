@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
 
   private createCanvas = () => {
     this.p5 = new p5(this.drawing);
-  };
+  }
 
   private drawing = function(p: any) {
     const bird = new Bird();
